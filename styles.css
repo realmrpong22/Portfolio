@@ -402,3 +402,11 @@ nav .right a span {
         font-size: 16px;
     }
 }
+
+.project-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
