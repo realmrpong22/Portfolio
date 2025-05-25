@@ -16,7 +16,7 @@ html {
 
 /* Typography Improvements */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.7;
   color: #333;
@@ -26,16 +26,17 @@ body {
 }
 
 h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   margin-bottom: 0.5em;
   color: #222;
 }
 
 p {
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 1em;
   max-width: 700px;
 }
-
 
 a {
     color: var(--link-color);
@@ -43,6 +44,9 @@ a {
 }
 
 /* NAVBAR */
+/* UPDATED STYLES - Replace sections in your styles.css */
+
+/* NAVBAR - Enhanced with glassmorphism */
 nav {
     display: flex;
     justify-content: space-between;
@@ -52,326 +56,488 @@ nav {
     position: fixed;
     top: 0px;
     width: 100%;
-    background: yellow;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
 }
 
 nav .left a {
     color: var(--text-color);
     font-size: 22px;
-    font-weight: 600;
-}
-
-nav .links {
-    margin-top: 0px;
+    font-weight: 700;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 nav .links a {
     display: inline-block;
-    padding: 5px 10px;
-    border: 2px solid var(--link-color);
-    border-radius: 5px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
     margin-right: 10px;
     margin-bottom: 10px;
-    transition: .1s;
+    transition: all 0.3s ease;
+    color: var(--text-color);
 }
 
 nav .links a:hover {
-    color: var(--text-color);
-    border: 2px solid var(--text-color);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 nav .right a {
     color: var(--text-color);
     margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+nav .right a:hover {
+    transform: translateY(-2px);
 }
 
 nav .right a:last-child {
-    color: var(--background-color);
-    background-color: var(--text-color);
-    padding: 5px 15px;
-    border-radius: 5px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-nav .right a span {
-    margin-left: 5px;
+nav .right a:last-child:hover {
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 
-/* SECTION 1: Introduction */
+/* INTRODUCTION SECTION - Enhanced with gradients */
 .introduction-section {
     display: flex;
     justify-content: space-between;
     padding: 0 50px;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 120px;
+    padding-bottom: 80px;
     align-items: center;
     gap: 40px;
-    background-color: #0099ff;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.introduction-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    pointer-events: none;
 }
 
 .introduction-section .text {
     flex: 5;
+    position: relative;
+    z-index: 2;
 }
 
 .introduction-section .text h2 {
     font-size: 45px;
+    background: linear-gradient(45deg, #2c3e50, #4a6741);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.introduction-section .text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(44, 62, 80, 0.8);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .introduction-section .headshot {
     flex: 2;
     display: flex;
     justify-content: right;
+    position: relative;
+    z-index: 2;
 }
 
 .introduction-section .headshot img {
     width: 150px;
     border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-/* SECTION 2: Skills */
+.introduction-section .headshot img:hover {
+    transform: scale(1.05);
+}
+
+/* SKILLS SECTION - Enhanced with modern cards */
 .skills-section {
-    padding: 70px 50px;
-    margin-bottom: 0;
-    background-color: #aaffc5;
+    padding: 80px 50px;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.skills-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="hexagon" width="60" height="60" patternUnits="userSpaceOnUse"><polygon points="30,5 50,18 50,42 30,55 10,42 10,18" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23hexagon)"/></svg>');
+    pointer-events: none;
 }
 
 .skills-section h2 {
     text-align: center;
-    font-size: 35px;
+    font-size: 42px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
 }
 
-.skills-section text {
+.skills-section .text {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: rgba(44, 62, 80, 0.7);
+    position: relative;
+    z-index: 2;
 }
 
 .skills-section .cells {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .skills-section .cells .cell {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    width: 280px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
 
-    width: 250px;
-    padding: 10px 20px;
-    margin: 10px;
-    border: 1.5px solid #d3d3d3;
-    border-radius: 5px;
+.skills-section .cells .cell:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .skills-section .cells .cell span {
     font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
 }
 
 .skills-section .cells .cell img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
-    border-radius: 2px;
+    border-radius: 8px;
 }
 
-/* SECTION 2.5: Work Experience */
+/* PROJECTS SECTION - Enhanced with modern design */
+.projects-section {
+    padding: 80px 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><defs><pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M 80 0 L 0 0 0 80" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    pointer-events: none;
+}
+
+.projects-section h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    font-size: 42px;
+    font-weight: 800;
+    position: relative;
+    z-index: 2;
+}
+
+/* Featured projects cards - enhanced */
+.featured-projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.featured-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 330px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 700px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Regular project cards - enhanced */
+.project {
+    width: 330px;
+    min-height: 530px;
+    margin-bottom: 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 25px 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* EXPERIENCE SECTION - Enhanced */
 .experience-section {
-    padding: 50px;
-    padding-top: 100px;
-    background-color: #0099ff;
+    padding: 80px 50px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="waves" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M0,50 Q25,25 50,50 T100,50 V100 L0,100 Z" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23waves)"/></svg>');
+    pointer-events: none;
 }
 
 .experience-section h2 {
     text-align: center;
-    font-size: 35px;
-    margin-bottom: 40px;
-    color: var(--text-color);
+    font-size: 42px;
+    margin-bottom: 50px;
+    background: linear-gradient(45deg, #d63384, #fd7e14);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    position: relative;
+    z-index: 2;
 }
 
 .experience-group {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    max-width: 800px;
-    margin: 0 auto;
+    gap: 30px; /* Add 30px gap between experience cards */
 }
 
 .experience {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0; /* Remove individual margin since we're using gap */
 }
 
-.experience h3 {
-    color: var(--text-color);
-    font-size: 22px;
-    margin-bottom: 10px;
+.experience:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.4);
 }
 
-.experience p {
-    color: #666;
-    font-size: 16px;
-}
-
-/* SECTION 3: Projects */
-.projects-section {
-    padding: 50px 0;
-    padding-top: 80px;
-    background-color: #0099ff; /* Light background for contrast */
-}
-
-.projects-section h2 {
-    text-align: center;
-    color: var(--text-color);
-    margin-bottom: 40px;
-}
-
-.projects-section .group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.project {
-    width: 300px;
-    min-height: 520px;
-    margin-bottom: 30px;
-    text-align: center;
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 25px 20px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.project img {
-    width: 100%;
-    height: 30%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.project h3 {
-    color: var(--text-color);
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-.project p {
-    color: #666;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.project ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.project li {
-    margin-bottom: 10px;
-}
-
-.project a {
-    color: var(--link-color);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.project a:hover {
-    text-decoration: underline;
-}
-
-/* SECTION 3: Past Education */
+/* EDUCATION SECTION - Enhanced */
 .education-section {
-    padding: 50px;
-    background-color: #aaffc5; /* Softer background color */
-    text-align: center;
+    padding: 80px 50px;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.education-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="books" width="50" height="50" patternUnits="userSpaceOnUse"><rect x="10" y="20" width="30" height="4" fill="%23ffffff" opacity="0.1"/><rect x="15" y="25" width="20" height="4" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23books)"/></svg>');
+    pointer-events: none;
 }
 
 .education-section h2 {
-    font-size: 35px;
-    margin-bottom: 40px;
-    color: var(--text-color);
+    font-size: 42px;
+    margin-bottom: 50px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    position: relative;
+    z-index: 2;
 }
 
 .education-group {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-    align-items: center;
+    gap: 30px; /* Add 30px gap between education cards */
 }
 
 .education {
-    background-color: #ffffff;
-    padding: 20px;
-    border-left: 5px solid var(--link-color); /* Colored border for emphasis */
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Full width */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-left: 5px solid #667eea;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
     text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0; /* Remove individual margin since we're using gap */
 }
 
-.education h3 {
-    color: var(--text-color);
-    font-size: 24px;
-    margin-bottom: 10px;
-    text-transform: capitalize; /* Capitalize each word */
+.education:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.4);
 }
 
-.education p {
-    color: #444;
-    font-size: 16px;
-    line-height: 1.6; /* Increased line-height for readability */
-}
-
-@media (max-width: 850px) {
-    /* SECTION 1: Introduction*/
-    .introduction-section .text h2 {
-        font-size: 35px;
-    }
-}
-
-/* SECTION 4: Contact */
+/* CONTACT SECTION - Enhanced */
 .contact-section {
-    padding: 50px;
-    background-color: #aaffc5;
+    padding: 80px 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="contact" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23contact)"/></svg>');
+    pointer-events: none;
 }
 
 .contact-section h2 {
-    font-size: 35px;
-    margin-bottom: 20px;
-    color: var(--text-color);
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: white;
+    font-weight: 800;
+    position: relative;
+    z-index: 2;
 }
 
 .contact-section p {
     font-size: 18px;
-    color: #666;
-    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
 }
 
 .contact-info p {
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: white;
 }
 
 .contact-info i {
-    margin-right: 10px;
-    color: var(--link-color);
+    margin-right: 15px;
+    color: #4ecdc4;
+    font-size: 20px;
 }
 
 .contact-info a {
-    color: var(--link-color);
+    color: white;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .contact-info a:hover {
+    color: #4ecdc4;
     text-decoration: underline;
 }
 
@@ -425,125 +591,466 @@ nav .right a span {
     }
 }
 
+/* GAME JAM SECTION - Add this to your styles.css */
+.game-jam-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 80px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-jam-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+.jam-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.jam-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.jam-badge i {
+    color: #4ecdc4;
+    font-size: 16px;
+}
+
+.jam-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.jam-info {
+    flex: 1;
+    color: white;
+}
+
+.jam-info h2 {
+    font-size: 48px;
+    margin: 0 0 10px 0;
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.jam-info h3 {
+    font-size: 28px;
+    margin: 0 0 20px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.jam-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.detail-item i {
+    width: 20px;
+    color: #4ecdc4;
+}
+
+.jam-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.jam-highlights {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.highlight-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(78, 205, 196, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    font-size: 14px;
+}
+
+.highlight-item i {
+    color: #4ecdc4;
+}
+
+.jam-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.jam-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.jam-btn.primary {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.jam-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
+.jam-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.jam-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.jam-visual {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.game-preview {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.game-preview:hover {
+    transform: scale(1.05);
+}
+
+.game-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.game-preview:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-overlay i {
+    font-size: 30px;
+    color: #667eea;
+    margin-left: 4px;
+}
+
+.jam-stats {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.stat {
+    text-align: center;
+    color: white;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #4ecdc4;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-jam-section {
+        padding: 60px 20px;
+    }
+    
+    .jam-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .jam-info h2 {
+        font-size: 36px;
+    }
+    
+    .jam-buttons {
+        justify-content: center;
+    }
+    
+    .jam-stats {
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 28px;
+    }
+}
+
+/* Add these styles to fix the projects section */
+
+/* Fix for the project group and layout */
+.projects-section .group {
+    position: relative;
+    z-index: 2;
+}
+
 .project-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 30px;
-    margin-bottom: 40px;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.featured-projects {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-bottom: 3rem;
+/* Ensure consistent project card styling */
+.project img {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.featured-card {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  max-width: 300px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 700px;
+.project img:hover {
+    transform: scale(1.05);
 }
 
+.project h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: 700;
+    text-align: center;
+}
+
+.project p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.project ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.project ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #666;
+    display: inline-block; /* Make buttons inline */
+    margin: 3px 8px; /* Add some spacing between buttons */
+}
+
+.project ul li a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 6px;
+    font-size: 11px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    margin: 2px;
+}
+
+.project ul li a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    text-decoration: none;
+}
+
+.project ul li i {
+    margin-right: 8px;
+    width: 16px;
+}
+
+/* Featured card fixes */
 .featured-card img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
 
-.card-content {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+.featured-card .card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.card-content h3 {
-  margin: 0.5rem 0;
-  font-size: 1.25rem;
-  text-align: center;
+.featured-card .card-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: 700;
+    text-align: center;
 }
 
-.card-content p {
-  font-size: 0.95rem;
-  margin-bottom: 0.75rem;
+.featured-card .card-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+    flex-grow: 1;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: #007bff;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
+.featured-card .card-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
 }
 
-.btn:hover {
-  background: #005fc1;
+.featured-card .card-content ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #666;
 }
 
-.btn i {
-  margin-right: 0.4em;
+.featured-card .card-footer {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 20px;
+    justify-content: center;
 }
 
-.featured-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0.75rem 0 0;
+.featured-card .card-footer .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    flex: 1; /* Make buttons take equal width */
+    min-width: 120px; /* Ensure minimum button width */
+    justify-content: center;
 }
 
-.featured-card li {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  display: block;
-  line-height: 1.4;
-  white-space: normal;
-  word-break: break-word;
+.featured-card .card-footer .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
-.featured-card li i {
-  margin-right: 0.5rem;
-  color: #007bff;
-}
-
-.featured-card li a {
-  color: #007bff;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.featured-card li a:hover {
-  text-decoration: underline;
-}
-
-.card-footer {
-  margin-top: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.card-footer a {
-  flex: 1;
-  text-align: center;
-  font-size: 0.8rem;
-}
-
-.featured-card:hover {
-  transform: translateY(-5px);
-  transition: transform 0.2s ease;
-}
-
-.featured-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+/* Mobile responsiveness for projects */
+@media (max-width: 768px) {
+    .project-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .featured-projects {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .featured-card {
+        width: 100%;
+        max-width: 400px;
+    }
 }
