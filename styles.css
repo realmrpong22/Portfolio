@@ -1312,3 +1312,302 @@ nav .right a:last-child:hover {
     position: relative;
     z-index: 2;
 }
+
+/* INTERNSHIP SECTION - Add this to your styles.css */
+.internship-section {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    padding: 80px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.internship-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="professional" width="40" height="40" patternUnits="userSpaceOnUse"><rect x="10" y="10" width="20" height="20" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.1" rx="2"/><circle cx="20" cy="20" r="2" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23professional)"/></svg>');
+    pointer-events: none;
+}
+
+.internship-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.internship-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.internship-badge i {
+    color: #ffd700;
+    font-size: 16px;
+}
+
+.internship-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.internship-info {
+    flex: 1;
+    color: white;
+}
+
+.internship-info h2 {
+    font-size: 48px;
+    margin: 0 0 10px 0;
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.internship-info h3 {
+    font-size: 28px;
+    margin: 0 0 20px 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+}
+
+.internship-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.detail-item i {
+    width: 20px;
+    color: #ffd700;
+}
+
+.internship-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.internship-highlights {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.highlight-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 215, 0, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.highlight-item i {
+    color: #ffd700;
+}
+
+.internship-tools {
+    margin-top: 25px;
+}
+
+.internship-tools h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+.tools-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tool-tag {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.internship-visual {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.company-logo {
+    width: 200px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.company-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.internship-stats {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 80px;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffd700;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.achievement-badge {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: #2c3e50;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.achievement-badge i {
+    color: #ff6b6b;
+}
+
+/* Enhanced experience cards */
+.featured-experience {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.3));
+    border-left: 5px solid #11998e;
+    position: relative;
+}
+
+.featured-experience::before {
+    content: '★';
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 24px;
+    color: #ffd700;
+}
+
+.experience-skills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.experience-skills span {
+    background: rgba(17, 153, 142, 0.2);
+    color: #11998e;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(17, 153, 142, 0.3);
+}
+
+.experience h4 {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0 10px 0;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .internship-section {
+        padding: 60px 20px;
+    }
+    
+    .internship-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .internship-info h2 {
+        font-size: 36px;
+    }
+    
+    .internship-stats {
+        gap: 15px;
+    }
+    
+    .stat-number {
+        font-size: 24px;
+    }
+    
+    .company-logo {
+        width: 150px;
+        height: 90px;
+    }
+}
