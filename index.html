@@ -750,13 +750,13 @@
     </main>
 
     <div id="project-panel" class="project-panel">
-        <button class="close-panel">&times;</button>
-
         <div class="panel-content">
-            <h2 id="panel-title">Project Title</h2>
-            <p id="panel-description">
-                Project description goes here.
-            </p>
+            <div class="panel-header">
+                <h2 id="panel-title">Project Title</h2>
+                <button class="close-panel">&times;</button>
+            </div>
+
+            <p id="panel-description">Project description goes here.</p>
 
             <div class="panel-links">
                 <a id="panel-github" target="_blank">Source Code</a>
@@ -764,6 +764,7 @@
             </div>
         </div>
     </div>
+
 
     <script>
         const panel = document.getElementById("project-panel");
@@ -778,12 +779,22 @@
                 document.getElementById("panel-demo").href = tile.dataset.demo;
 
                 panel.classList.add("active");
+                document.body.classList.add("modal-open"); // 👈 add
             });
         });
 
         closeBtn.addEventListener("click", () => {
             panel.classList.remove("active");
+            document.body.classList.remove("modal-open"); // 👈 remove
         });
+
+        panel.addEventListener("click", (e) => {
+            if (e.target === panel) {
+                panel.classList.remove("active");
+                document.body.classList.remove("modal-open"); // 👈 remove
+            }
+        });
+
     </script>
 </body>
 
