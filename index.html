@@ -87,9 +87,10 @@
         <section class="introduction-section">
             <div class="text">
                 <h2>Hi, I'm Phong</h2>
-                <p>Aspiring Game Developer and Game Designer with a strong foundation in C++,
+                <p>Aspiring Game Developer and Game Designer with a strong foundation in C++, C#
                     Unity, and Unreal Engine. Passionate about game design and building engaging,
-                    accessible game experiences. Seeking an internship opportunity to contribute to a creative team and
+                    accessible game experiences. Seeking a job opportunity as a junior to contribute to a creative team
+                    and
                     further advance game development and design skills.</p>
             </div>
 
@@ -319,6 +320,26 @@
                     </div>
                 </div>-->
 
+                <div class="project-tile" data-title="Echoes of the Depths" data-description="A 2D action-platformer prototype inspired by the Metroidvania genre. 
+                                This was a solo project where I designed and implemented the core gameplay systems from scratch.
+
+                                Key features include enemy AI behaviors, a checkpoint and save system, player combat, and movement abilities such as jumping and dodging. 
+                                I also designed the level layout to encourage exploration and platforming challenges.
+
+                                This project helped me deepen my understanding of gameplay programming, state-based enemy AI, and structuring reusable systems in Unity. <br><br>
+
+                                Platform: Windows PC <br><br>
+                                Engine: Unity <br><br>
+                                Language: C# <br><br>
+                                Role: Solo Developer"
+                    data-github="https://github.com/realmrpong22/Echoes-of-the-Depths"
+                    data-demo="https://youtu.be/KnKKgIg0yO4">
+                    <img src="images/Echoes of the Depths.png" alt="Echoes of the Depths">
+                    <div class="project-overlay">
+                        <h3>Echoes of the Depths</h3>
+                    </div>
+                </div>
+
                 <div class="project-tile">
                     <img src="images/CouchCoopTank.jpg" alt="Macro Hard Thumbnail">
                     <div class="project-overlay">
@@ -388,12 +409,12 @@
                     </div>
                 </div>-->
 
-                <div class="project-tile">
+                <!--<div class="project-tile">
                     <img src="images/Kingdom and Heroes.jpg" alt="Kingdom and Heroes thumbnail">
                     <div class="project-overlay">
                         <h3>Kingdom and Heroes</h3>
                     </div>
-                </div>
+                </div>-->
 
                 <!--<div class="featured-card">
                     <img src="images/Kingdom and Heroes.jpg" alt="Kingdom and Heroes thumbnail">
@@ -432,6 +453,13 @@
                         <img src="images/Animal Matching.webp" alt="Animal Matching thumbnail">
                         <div class="project-overlay">
                             <h3>Animal Matching</h3>
+                        </div>
+                    </div>
+
+                    <div class="project-tile">
+                        <img src="images/Kingdom and Heroes.jpg" alt="Kingdom and Heroes thumbnail">
+                        <div class="project-overlay">
+                            <h3>Kingdom and Heroes</h3>
                         </div>
                     </div>
 
@@ -772,8 +800,8 @@
 
         document.querySelectorAll(".project-tile").forEach(tile => {
             tile.addEventListener("click", () => {
-                document.getElementById("panel-title").textContent = tile.dataset.title;
-                document.getElementById("panel-description").textContent = tile.dataset.description;
+                document.getElementById("panel-title").innerHTML = tile.dataset.title;
+                document.getElementById("panel-description").innerHTML = tile.dataset.description;
 
                 document.getElementById("panel-github").href = tile.dataset.github;
                 document.getElementById("panel-demo").href = tile.dataset.demo;

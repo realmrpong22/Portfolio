@@ -403,6 +403,9 @@ section h2 {
   transition: transform 0.25s ease;
 
   position: relative;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .project-panel.active .panel-content {
@@ -411,13 +414,16 @@ section h2 {
 
 .panel-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
   align-items: flex-start;
   margin-bottom: 20px;
 }
 
 .panel-header h2 {
   margin: 0;
+  text-align: center;
+  width: 100%;
 }
 
 .close-panel {
@@ -427,12 +433,15 @@ section h2 {
   font-size: 36px;
   cursor: pointer;
   line-height: 1;
+  position: absolute;
+  right: 0;
 }
 
 .panel-links {
-  margin-top: 30px;
+  margin-top: auto;
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
 .panel-links a {
