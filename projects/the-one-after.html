@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+    <title>The One After</title>
+</head>
+
+<body>
+
+    <!-- NAV (simple for now) -->
+    <nav>
+        <div class="left">
+            <a href="../index.html">← Back</a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+
+        <section class="project-hero">
+            <div class="hero-image">
+                <img src="../images/The One After.png" alt="The One After">
+            </div>
+
+            <div class="hero-overlay">
+                <h1>The One After</h1>
+                <p>Turn-based Boss Rush • Unity • C#</p>
+            </div>
+        </section>
+
+        <!-- IMAGE / VIDEO -->
+        <section class="project-media">
+            <img src="../images/The One After.png" alt="The One After">
+        </section>
+
+        <section class="project-info-section">
+
+            <h2 class="section-title">Overview</h2>
+
+            <div class="project-info-grid">
+
+                <!-- LEFT -->
+                <div class="info-left">
+                    <p>
+                        A 2D action-platformer prototype inspired by Metroidvania games.
+                        Built as a solo project focusing on core gameplay systems.
+                    </p>
+
+                    <p>
+                        The game emphasizes exploration, ability-based progression, and
+                        interconnected world design that encourages backtracking.
+                    </p>
+
+                    <h3 class="subheading">Gameplay</h3>
+
+                    <ul class="gameplay-list">
+                        <li>Exploration-driven progression with ability gating</li>
+                        <li>Fast-paced melee combat with dodge mechanics</li>
+                        <li>Puzzle trials that alter boss encounters</li>
+                        <li>Non-linear level design with backtracking</li>
+                    </ul>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="info-right">
+                    <div class="info-block">
+                        <h3>Engine</h3>
+                        <p>Unity 2023.2.20f1</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Language</h3>
+                        <p>C#</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Role</h3>
+                        <p>Game Designer<br>Programmer</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- DESIGN BREAKDOWN -->
+        <section class="project-full">
+            <div class="project-content">
+                <div class="project-split">
+                    <div class="text">
+                        <h2>Design Breakdown</h2>
+                        <p>
+                            The game is built around an ability-driven progression loop that encourages
+                            exploration and backtracking.
+                        </p>
+
+                        <p>
+                            Players can either fight bosses directly or complete puzzle trials to weaken them,
+                            creating a dual approach to progression.
+                        </p>
+                    </div>
+
+                    <div class="image">
+                        <img src="../images/The One After.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SYSTEMS -->
+        <section class="project-section">
+            <h2>Systems Design</h2>
+
+            <h3>Player Systems</h3>
+            <ul>
+                <li>Modular ability system (Dash, Double Jump, Wall Jump, Pulse)</li>
+                <li>Physics-based movement with acceleration and variable jump height</li>
+                <li>Checkpoint system handling respawn and progression</li>
+            </ul>
+
+            <h3>Enemy Design</h3>
+            <ul>
+                <li>Behavior Tree-based AI system instead of FSM</li>
+                <li>Enemies evaluate conditions dynamically (detect → chase → attack)</li>
+                <li>Reusable modular nodes for scalable enemy design</li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+
+</html>
