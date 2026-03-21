@@ -47,22 +47,25 @@
                 <!-- LEFT -->
                 <div class="info-left">
                     <p>
-                        A 2D action-platformer prototype inspired by Metroidvania games.
-                        Built as a solo project focusing on core gameplay systems.
+                        The One After is a turn-based boss fight game developed in 48 hours for a game jam,
+                        centered around a single evolving encounter. The player faces one powerful boss,
+                        learning its patterns and adapting across repeated attempts.
                     </p>
 
                     <p>
-                        The game emphasizes exploration, ability-based progression, and
-                        interconnected world design that encourages backtracking.
+                        The design focuses on iterative mastery, where each defeat contributes to a deeper
+                        understanding of the boss mechanics, creating a progression system built around player knowledge
+                        rather than traditional upgrades.
                     </p>
 
                     <h3 class="subheading">Gameplay</h3>
 
                     <ul class="gameplay-list">
-                        <li>Exploration-driven progression with ability gating</li>
-                        <li>Fast-paced melee combat with dodge mechanics</li>
-                        <li>Puzzle trials that alter boss encounters</li>
-                        <li>Non-linear level design with backtracking</li>
+                        <li>Turn-based combat against a single boss encounter</li>
+                        <li>QTE-based dodge system requiring timing and reaction</li>
+                        <li>Boss gains new mechanics and weaknesses after each player defeat</li>
+                        <li>Pattern recognition and adaptation as core progression</li>
+                        <li>Short, repeatable runs designed for rapid iteration</li>
                     </ul>
                 </div>
 
@@ -95,13 +98,15 @@
                     <div class="text">
                         <h2>Design Breakdown</h2>
                         <p>
-                            The game is built around an ability-driven progression loop that encourages
-                            exploration and backtracking.
+                            The core concept revolves around transforming failure into progression. Instead of
+                            traditional leveling systems, the game evolves by expanding the boss’s behavior after
+                            each defeat, encouraging players to learn and adapt rather than grind.
                         </p>
 
                         <p>
-                            Players can either fight bosses directly or complete puzzle trials to weaken them,
-                            creating a dual approach to progression.
+                            The QTE dodge system adds a real-time layer to the turn-based structure, creating tension
+                            between planning and execution. This hybrid approach keeps encounters engaging while
+                            maintaining clarity in player decision-making.
                         </p>
                     </div>
 
@@ -116,18 +121,25 @@
         <section class="project-section">
             <h2>Systems Design</h2>
 
-            <h3>Player Systems</h3>
+            <h3>Combat System</h3>
             <ul>
-                <li>Modular ability system (Dash, Double Jump, Wall Jump, Pulse)</li>
-                <li>Physics-based movement with acceleration and variable jump height</li>
-                <li>Checkpoint system handling respawn and progression</li>
+                <li>Turn-based combat loop with player actions and boss responses</li>
+                <li>QTE-based dodge mechanic integrated into enemy attacks</li>
+                <li>Clear telegraphing of boss actions to support player learning</li>
             </ul>
 
-            <h3>Enemy Design</h3>
+            <h3>Boss Design</h3>
             <ul>
-                <li>Behavior Tree-based AI system instead of FSM</li>
-                <li>Enemies evaluate conditions dynamically (detect → chase → attack)</li>
-                <li>Reusable modular nodes for scalable enemy design</li>
+                <li>Single boss encounter with evolving behavior patterns</li>
+                <li>New weaknesses and mechanics introduced after each player defeat</li>
+                <li>Designed to encourage pattern recognition and iterative mastery</li>
+            </ul>
+
+            <h3>UI & Presentation</h3>
+            <ul>
+                <li>Designed and implemented combat UI for turn-based interactions</li>
+                <li>Clear feedback for player actions and incoming attacks</li>
+                <li>Lightweight interface optimized for rapid game jam development</li>
             </ul>
         </section>
     </main>

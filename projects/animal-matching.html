@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+    <title>Animal Matching</title>
+</head>
+
+<body>
+
+    <!-- NAV (simple for now) -->
+    <nav>
+        <div class="left">
+            <a href="../index.html">← Back</a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+
+        <section class="project-hero">
+            <div class="hero-image">
+                <img src="../images/Animal Matching.webp" alt="Animal Matching">
+            </div>
+
+            <div class="hero-overlay">
+                <h1>Animal Matching</h1>
+                <p>Match-3 Puzzle Game • Unity • C#</p>
+            </div>
+        </section>
+
+        <!-- IMAGE / VIDEO -->
+        <section class="project-media">
+            <img src="../images/Animal Matching.webp" alt="Animal Matching">
+        </section>
+
+        <section class="project-info-section">
+
+            <h2 class="section-title">Overview</h2>
+
+            <div class="project-info-grid">
+
+                <!-- LEFT -->
+                <div class="info-left">
+                    <p>
+                        Animal Matching is a classic match-3 puzzle game developed in Unity for both PC and Android.
+                        The project focuses on building a complete and responsive match-3 gameplay system from scratch,
+                        including tile swapping, match detection, and cascading board resolution.
+                    </p>
+
+                    <p>
+                        The core objective of the project was to implement a solid technical foundation for match-3
+                        games,
+                        with an emphasis on clean system interactions, extensibility, and satisfying gameplay feedback.
+                    </p>
+
+                    <h3 class="subheading">Gameplay</h3>
+
+                    <ul class="gameplay-list">
+                        <li>Classic match-3 gameplay with adjacent tile swapping</li>
+                        <li>Automatic match detection for horizontal and vertical patterns</li>
+                        <li>Cascading matches triggered by gravity-based tile refill</li>
+                        <li>Special bomb tiles created through larger matches</li>
+                        <li>Continuous board updates with responsive input handling</li>
+                    </ul>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="info-right">
+                    <div class="info-block">
+                        <h3>Engine</h3>
+                        <p>Unity 2022.3.62f2</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Language</h3>
+                        <p>C#</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Role</h3>
+                        <p>Solo Developer<br>Game Designer<br>Programmer</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- DESIGN BREAKDOWN -->
+        <section class="project-full">
+            <div class="project-content">
+                <div class="project-split">
+                    <div class="text">
+                        <h2>Design Breakdown</h2>
+                        <p>
+                            The design prioritizes responsiveness and clarity, ensuring that each player action produces
+                            immediate and readable feedback. Tile movement, match resolution timing, and cascading
+                            effects were carefully tuned to create a satisfying gameplay loop.
+                        </p>
+
+                        <p>
+                            Rather than focusing on level-based progression, the project emphasizes systemic design,
+                            where interactions between matching, gravity, and special tiles create dynamic outcomes
+                            without requiring handcrafted content.
+                        </p>
+                    </div>
+
+                    <div class="image">
+                        <img src="../images/Animal Matching.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SYSTEMS -->
+        <section class="project-section">
+            <h2>Systems Design</h2>
+
+            <h3>Player Systems</h3>
+            <h3>Core Systems</h3>
+            <ul>
+                <li>Grid-based board system managing tile positions and state</li>
+                <li>Match detection system supporting both horizontal and vertical chains</li>
+                <li>Cascade resolution pipeline using coroutines for sequential updates</li>
+                <li>Tile swapping system with validation and rollback for invalid moves</li>
+            </ul>
+
+            <h3>Power-up System</h3>
+            <ul>
+                <li>Bomb tiles generated from larger matches</li>
+                <li>Area, row, and column clearing effects</li>
+                <li>Integrated with match resolution system for chain reactions</li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+
+</html>

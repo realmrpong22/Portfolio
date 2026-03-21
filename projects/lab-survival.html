@@ -47,22 +47,24 @@
                 <!-- LEFT -->
                 <div class="info-left">
                     <p>
-                        A 2D action-platformer prototype inspired by Metroidvania games.
-                        Built as a solo project focusing on core gameplay systems.
+                        Lab Survival is a wave-based top-down shooter developed in Unity, centered around
+                        fast-paced combat and a roguelike upgrade system. Players must survive increasingly
+                        difficult waves of enemies while adapting their build through randomized upgrades.
                     </p>
 
                     <p>
-                        The game emphasizes exploration, ability-based progression, and
-                        interconnected world design that encourages backtracking.
+                        The project focuses on combining moment-to-moment gameplay with long-term decision-making,
+                        allowing each run to evolve differently based on player choices and upgrade combinations.
                     </p>
 
                     <h3 class="subheading">Gameplay</h3>
 
                     <ul class="gameplay-list">
-                        <li>Exploration-driven progression with ability gating</li>
-                        <li>Fast-paced melee combat with dodge mechanics</li>
-                        <li>Puzzle trials that alter boss encounters</li>
-                        <li>Non-linear level design with backtracking</li>
+                        <li>Wave-based survival against escalating enemy difficulty</li>
+                        <li>Roguelike upgrade system with 3 choices after each wave</li>
+                        <li>Build variety through combinable weapon modifiers</li>
+                        <li>Fast-paced shooting with continuous enemy pressure</li>
+                        <li>Replayable runs with different upgrade paths</li>
                     </ul>
                 </div>
 
@@ -95,13 +97,16 @@
                     <div class="text">
                         <h2>Design Breakdown</h2>
                         <p>
-                            The game is built around an ability-driven progression loop that encourages
-                            exploration and backtracking.
+                            The core design revolves around creating meaningful player decisions through the upgrade
+                            system.
+                            After each wave, players are presented with three randomized upgrades, encouraging strategic
+                            choices that shape the direction of each run. <br><br>
                         </p>
 
                         <p>
-                            Players can either fight bosses directly or complete puzzle trials to weaken them,
-                            creating a dual approach to progression.
+                            Upgrades are designed to interact with each other, allowing for emergent builds such as
+                            multi-projectile spread attacks or piercing shots that change how players approach combat.
+                            This system adds depth without requiring handcrafted levels or scripted encounters.
                         </p>
                     </div>
 
@@ -116,18 +121,20 @@
         <section class="project-section">
             <h2>Systems Design</h2>
 
-            <h3>Player Systems</h3>
+            <h3>Combat System</h3>
             <ul>
-                <li>Modular ability system (Dash, Double Jump, Wall Jump, Pulse)</li>
-                <li>Physics-based movement with acceleration and variable jump height</li>
-                <li>Checkpoint system handling respawn and progression</li>
+                <li>Top-down shooting system with responsive player controls</li>
+                <li>Enemy spawning system with increasing difficulty per wave</li>
+                <li>Collision and damage handling for player and enemies</li>
+                <li>Projectile system supporting multiple modifiers</li>
             </ul>
 
-            <h3>Enemy Design</h3>
+            <h3>Upgrade System</h3>
             <ul>
-                <li>Behavior Tree-based AI system instead of FSM</li>
-                <li>Enemies evaluate conditions dynamically (detect → chase → attack)</li>
-                <li>Reusable modular nodes for scalable enemy design</li>
+                <li>Roguelike upgrade selection with 3 randomized options per wave</li>
+                <li>Stackable upgrades affecting weapon behavior</li>
+                <li>Examples include spread shot (multi-projectile) and pierce (enemy penetration)</li>
+                <li>System designed for easy expansion with new upgrade types</li>
             </ul>
         </section>
     </main>
