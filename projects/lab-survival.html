@@ -36,14 +36,26 @@
         <section class="project-webgl-section">
             <h2>Play the Alpha Build</h2>
 
-            <div class="game-aspect-ratio-box">
-                <iframe src="../builds/lab-survival/index.html" allowfullscreen></iframe>
+            <div id="game-container" class="game-aspect-ratio-box">
+
+                <div class="game-placeholder">
+                    <img src="../images/Lab Survival.png" alt="Lab Survival Menu">
+                    <button class="play-btn" onclick="startLoading()">
+                        <i class="fa-solid fa-play"></i> Play in Browser
+                    </button>
+                </div>
+
             </div>
 
-            <div class="game-controls-hint">
-                <span><i class="fa-solid fa-keyboard"></i> WASD to Move</span>
-                <span><i class="fa-solid fa-mouse"></i> Click to Shoot</span>
-                <span><i class="fa-solid fa-up-right-and-down-left-from-center"></i> Fullscreen Recommended</span>
+            <div class="game-footer">
+                <div class="game-controls-hint">
+                    <span><i class="fa-solid fa-keyboard"></i> WASD to Move</span>
+                    <span><i class="fa-solid fa-mouse"></i> Click to Shoot</span>
+                </div>
+
+                <button class="fullscreen-btn" onclick="toggleFullscreen()">
+                    <i class="fa-solid fa-expand"></i> Fullscreen
+                </button>
             </div>
         </section>
 
@@ -157,6 +169,25 @@
             </ul>
         </section>
     </main>
+
+    <script>
+        function startLoading() {
+            const container = document.getElementById('game-container');
+            // Replace the placeholder content with the actual Unity build
+            container.innerHTML = `<iframe src="../builds/lab-survival/index.html" allowfullscreen></iframe>`;
+        }
+
+        function toggleFullscreen() {
+            let elem = document.querySelector("#game-container iframe");
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
 
 </body>
 
