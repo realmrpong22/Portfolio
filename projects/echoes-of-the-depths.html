@@ -4,11 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Echoes of the Depths: 2D Metroidvania • Unity • C#. A game project by Do Xuan Phong, game designer.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Echoes of the Depths">
+    <meta property="og:description" content="Echoes of the Depths: 2D Metroidvania • Unity • C#. A game project by Do Xuan Phong, game designer.">
+    <meta property="og:image" content="https://realmrpong22.github.io/Portfolio/images/Echoes%20of%20the%20Depths.png">
+    <meta property="og:url" content="https://realmrpong22.github.io/Portfolio/projects/echoes-of-the-depths.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
 
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Echoes of the Depths</title>
+    <title>Echoes of the Depths | Do Xuan Phong</title>
 </head>
 
 <body>
@@ -39,7 +50,7 @@
             <div id="game-container" class="game-aspect-ratio-box">
 
                 <div class="game-placeholder">
-                    <img src="../images/Echoes of the Depths.png" alt="The One After Menu">
+                    <img src="../images/Echoes of the Depths.png" alt="Echoes of the Depths menu">
                     <button class="play-btn" onclick="startLoading()">
                         <i class="fa-solid fa-play"></i> Play in Browser
                     </button>
@@ -50,10 +61,12 @@
             <div class="game-footer">
                 <div class="game-controls-hint">
                     <span><i class="fa-solid fa-keyboard"></i> WASD to Move</span>
-                    <span><i class="fa-solid fa-mouse"></i> Click to Shoot</span>
+                    <span><i class="fa-solid fa-keyboard"></i> Space to Jump</span>
+                    <span><i class="fa-solid fa-keyboard"></i> Shift / Right Click to Dash</span>
+                    <span><i class="fa-solid fa-mouse"></i> Left Click to Attack</span>
                 </div>
 
-                <button class="fullscreen-btn" onclick="toggleFullscreen()">
+                <button class="fullscreen-btn" onclick="toggleFullscreen()" disabled>
                     <i class="fa-solid fa-expand"></i> Fullscreen
                 </button>
             </div>
@@ -132,7 +145,7 @@
                     </div>
 
                     <div class="image">
-                        <img src="../images/Echoes of the Depths.png" alt="">
+                        <img src="../images/Echoes of the Depths.png" alt="Echoes of the Depths screenshot">
                     </div>
                 </div>
             </div>
@@ -175,10 +188,12 @@
             const container = document.getElementById('game-container');
             // Replace the placeholder content with the actual Unity build
             container.innerHTML = `<iframe src="../builds/echoes-of-the-depths/index.html" allowfullscreen></iframe>`;
+            document.querySelector(".fullscreen-btn").disabled = false;
         }
 
         function toggleFullscreen() {
             let elem = document.querySelector("#game-container iframe");
+            if (!elem) return;
             if (elem.requestFullscreen) {
                 elem.requestFullscreen();
             } else if (elem.webkitRequestFullscreen) { /* Safari */

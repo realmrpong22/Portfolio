@@ -4,11 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Animal Matching: Match-3 Puzzle Game • Unity • C#. A game project by Do Xuan Phong, game designer.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Animal Matching">
+    <meta property="og:description" content="Animal Matching: Match-3 Puzzle Game • Unity • C#. A game project by Do Xuan Phong, game designer.">
+    <meta property="og:image" content="https://realmrpong22.github.io/Portfolio/images/Animal%20Matching.png">
+    <meta property="og:url" content="https://realmrpong22.github.io/Portfolio/projects/animal-matching.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
 
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Animal Matching</title>
+    <title>Animal Matching | Do Xuan Phong</title>
 </head>
 
 <body>
@@ -39,7 +50,7 @@
             <div id="game-container" class="game-aspect-ratio-box">
 
                 <div class="game-placeholder">
-                    <img src="../images/Animal Matching.webp" alt="The One After Menu">
+                    <img src="../images/Animal Matching.webp" alt="Animal Matching menu">
                     <button class="play-btn" onclick="startLoading()">
                         <i class="fa-solid fa-play"></i> Play in Browser
                     </button>
@@ -49,11 +60,10 @@
 
             <div class="game-footer">
                 <div class="game-controls-hint">
-                    <span><i class="fa-solid fa-keyboard"></i> WASD to Move</span>
-                    <span><i class="fa-solid fa-mouse"></i> Click to Shoot</span>
+                    <span><i class="fa-solid fa-mouse"></i> Click and drag to swap animals</span>
                 </div>
 
-                <button class="fullscreen-btn" onclick="toggleFullscreen()">
+                <button class="fullscreen-btn" onclick="toggleFullscreen()" disabled>
                     <i class="fa-solid fa-expand"></i> Fullscreen
                 </button>
             </div>
@@ -137,7 +147,7 @@
                     </div>
 
                     <div class="image">
-                        <img src="../images/Animal Matching.webp" alt="">
+                        <img src="../images/Animal Matching.webp" alt="Animal Matching screenshot">
                     </div>
                 </div>
             </div>
@@ -170,10 +180,12 @@
             const container = document.getElementById('game-container');
             // Replace the placeholder content with the actual Unity build
             container.innerHTML = `<iframe src="../builds/animal-matching/index.html" allowfullscreen></iframe>`;
+            document.querySelector(".fullscreen-btn").disabled = false;
         }
 
         function toggleFullscreen() {
             let elem = document.querySelector("#game-container iframe");
+            if (!elem) return;
             if (elem.requestFullscreen) {
                 elem.requestFullscreen();
             } else if (elem.webkitRequestFullscreen) { /* Safari */

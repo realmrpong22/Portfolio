@@ -12,6 +12,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 70px;
+}
+
 body {
   background: #000;
   color: #fff;
@@ -111,11 +115,8 @@ section h2 {
    SIMPLE CONTENT BLOCKS
 ========================= */
 
-.internship-section,
-.game-jam-section,
 .projects-section,
 .more-projects-section,
-.skills-section,
 .experience-section,
 .cv-section,
 .contact-section {
@@ -129,96 +130,114 @@ section h2 {
 .featured-projects,
 .project-row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 320px));
   gap: 20px;
-}
-
-.featured-card,
-.project {
-  width: 320px;
-  border: 1px solid #fff;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.featured-card img,
-.project img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.featured-card h3,
-.project h3 {
-  font-size: 20px;
-}
-
-.featured-card p,
-.project p {
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-.featured-card ul,
-.project ul {
-  list-style: none;
-  font-size: 13px;
-  opacity: 0.85;
-}
-
-.featured-card .card-footer,
-.project ul li {
-  margin-top: auto;
-}
-
-/* =========================
-   SKILLS
-========================= */
-
-.skills-section .cells {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.skills-section .cell {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 1px solid #fff;
-  padding: 12px 16px;
-}
-
-.skills-section img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
 }
 
 /* =========================
    EXPERIENCE
 ========================= */
 
-.experience-group {
+.job-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #333;
+  background: #0a0a0a;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 24px;
 }
 
-.experience {
-  border: 1px solid #fff;
-  padding: 20px;
+.job-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.experience-skills span {
-  display: inline-block;
-  margin: 6px 6px 0 0;
+.job-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.job-header h3 {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.job-company {
+  font-weight: 600;
+}
+
+.job-meta {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.job-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.job-stats .stat {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.job-duties {
+  padding-left: 20px;
+  opacity: 0.9;
+}
+
+.job-duties li {
+  margin-bottom: 6px;
+}
+
+.job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.job-tags span {
   padding: 4px 10px;
   border: 1px solid #fff;
   font-size: 12px;
 }
+
+@media (max-width: 600px) {
+  .job-card {
+    padding: 20px;
+  }
+
+  .job-stats {
+    gap: 8px;
+  }
+
+  .stat-number {
+    font-size: 22px;
+  }
+}
+
 
 /* =========================
    CV
@@ -267,6 +286,15 @@ footer {
   nav span {
     display: none;
   }
+
+  nav .links {
+    display: none;
+  }
+
+  nav .left a {
+    font-size: 18px;
+    white-space: nowrap;
+  }
 }
 
 section h2 {
@@ -276,7 +304,6 @@ section h2 {
 .projects-section,
 .introduction-section,
 .more-projects-section,
-.skills-section,
 .experience-section,
 .cv-section,
 .cv-card,
@@ -286,20 +313,6 @@ section h2 {
 
 .featured-projects,
 .project-row {
-  justify-content: center;
-}
-
-.experience-group {
-  align-items: center;
-}
-
-.experience {
-  max-width: 900px;
-  text-align: left;
-  /* keeps readability */
-}
-
-.skills-section .cells {
   justify-content: center;
 }
 
@@ -369,100 +382,6 @@ section h2 {
   transform: scale(1.05);
 }
 
-.project-panel {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(0, 0, 0, 0.6);
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-
-.project-panel.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.panel-content {
-  width: 75vw;
-  height: 75vh;
-  max-width: 1100px;
-  max-height: 800px;
-
-  background: #000;
-  border: 1px solid #fff;
-
-  padding: 40px;
-
-  transform: scale(0.95);
-  transition: transform 0.25s ease;
-
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.project-panel.active .panel-content {
-  transform: scale(1);
-}
-
-.panel-header {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.panel-header h2 {
-  margin: 0;
-  text-align: center;
-  width: 100%;
-}
-
-.close-panel {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 36px;
-  cursor: pointer;
-  line-height: 1;
-  position: absolute;
-  right: 0;
-}
-
-.panel-links {
-  margin-top: auto;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.panel-links a {
-  border: 1px solid #fff;
-  padding: 8px 14px;
-}
-
-body.modal-open {
-  overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .panel-content {
-    width: 92vw;
-    height: 90vh;
-    padding: 25px;
-  }
-}
-
 /* =========================
 PROJECT PAGE
 ========================= */
@@ -513,23 +432,6 @@ PROJECT PAGE
 .project-section li {
   margin-bottom: 10px;
   opacity: 0.9;
-}
-
-.project-links {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.project-links a {
-  border: 1px solid #fff;
-  padding: 10px 16px;
-  transition: opacity 0.2s ease;
-}
-
-.project-links a:hover {
-  opacity: 0.7;
 }
 
 .project-hero {
@@ -717,13 +619,6 @@ PROJECT PAGE
 
 .project-info-section {
   margin: 60px 0; /* reduced from ~100+ */
-}
-
-@media (max-width: 1200px) {
-  .featured-projects,
-  .project-row {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 @media (max-width: 768px) {
@@ -985,11 +880,13 @@ PROJECT PAGE
     background: #444;
 }
 
-.project-details-split {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    margin-top: 30px;
+.fullscreen-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.fullscreen-btn:disabled:hover {
+    background: #333;
 }
 
 .detail-column {
@@ -1002,9 +899,62 @@ PROJECT PAGE
     margin-bottom: 15px;
 }
 
-/* For mobile: stack them on top of each other */
-@media (max-width: 600px) {
-    .project-details-split {
-        flex-direction: column;
-    }
+/* =========================
+   INTRO ACTIONS
+========================= */
+
+.introduction-section .intro-tagline {
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 1;
+  margin: 0 auto 12px;
+}
+
+.introduction-section p {
+  margin: 0 auto;
+}
+
+.intro-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.intro-actions .cv-btn {
+  flex: 0 0 auto;
+  padding: 10px 22px;
+}
+
+/* =========================
+   TOUCH SCREENS: always show tile titles
+========================= */
+
+@media (hover: none) {
+  .project-overlay {
+    opacity: 1;
+    align-items: flex-end;
+    padding: 10px;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.9));
+  }
+
+  .project-overlay h3 {
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: center;
+  }
+}
+
+/* =========================
+   GAME CONTROLS
+========================= */
+
+.game-footer {
+    gap: 15px;
+}
+
+.game-controls-hint {
+    flex-wrap: wrap;
+    gap: 8px 20px;
 }
